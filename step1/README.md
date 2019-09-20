@@ -41,11 +41,15 @@ ENTRYPOINT ["python", "./linkextractor.py"]
 
 ## Build the image
 
-`docker build . -t linkextractor:v1`
+```bash
+docker build . -t linkextractor:v1
+```
 
 ## Run the container
 
-`docker run linkextractor:v1 https://docker.com`
+```bash
+docker run linkextractor:v1 https://docker.com
+```
 
 You can use any URL you want above.
 
