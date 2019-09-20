@@ -7,7 +7,7 @@ optimize the Dockerfile.
 
 ## Changes from the previous step
 
-The `linkextractor.py` has been updated as follows:
+The `linkextractor.py` script has been updated as follows:
 
 * Paths are normalized to full URLs
 * Reporting both links and anchor texts
@@ -19,25 +19,41 @@ You can see the code in your editor of choice, if interested.
 
 ```bash
 docker build . -t linkextractor:v2
-docker container run -it --rm linkextractor:v2 http://example.com/
-docker container run -it --rm linkextractor:v2 http://odu.edu/
+docker container run -it --rm linkextractor:v2 http://docker.com/
 ```
+
+The only "visible" difference between v1 and v2 at this point, is now you have
+full URLs in the output.
+
+```
+$ docker container run -it --rm linkextractor:v2 http://docker.com/
+[[IMG]](http://docker.com/)
+[Why Docker?](http://docker.com/why-docker)
+[What is a Container?](http://docker.com/resources/what-container)
+[Company](http://docker.com/company)
+[Partners](http://docker.com/partners)
+[Products](http://docker.com/products)
+```
+
+The main changes in the `linkextractor.py` are for this next bit :D
 
 ## Time to make it an API
 
-1. `cp cheats/main.py .`
-   * `main.py` uses Flask to create a live app with an API path and returns
-     JSON instead of the raw text.
+There is a now a 2nd python file in this directory, `main.py`. 
+
+   * `main.py` uses Flask to create a live app with an API path and returns JSON
+     instead of the raw text.
    * Our container image doesn't have Flask installed so we can't simply build
      it again and run - we need to modify the Dockerfile.
 
-2. Your current Dockerfile has two `RUN` steps that execute `pip` commands.
+The current Dockerfile has two `RUN` steps that execute `pip` commands.
 This is OK but will get tedious to maintain if we keeping adding more Python
 packages like flask to our program over time. Plus, Python coders would
 typically expect to see a file called `requirements.txt` that has all the
 required packages listed, so we should stick to normal Python usage so people
 can figure out our code.
-   * Create a file named `requirements.txt` with the following contents:
+
+Create a file named `requirements.txt` with the following contents:
 
 ```text
 beautifulsoup4
@@ -45,24 +61,23 @@ flask
 requests
 ```
 
-3. We need to update our Dockerfile now since we've got a `requirements.txt`
-   file. Plus we have two Python modules and `main.py` is where we want our
-   program to start. Overwrite the current contents of your `Dockerfile` with the
-   following:
+We need to update our Dockerfile now since we've got a `requirements.txt` file.
+Plus we have two Python modules and `main.py` is where we want our program to
+start. Overwrite the current contents of your `Dockerfile` with the following:
 
-   ```Dockerfile
-   FROM python:3.7-alpine
-   LABEL maintainer="<your name>"
+```Dockerfile
+FROM python:3.7-alpine
+LABEL maintainer="<your name>"
 
-   WORKDIR /app
-   COPY requirements.txt /app/
-   RUN pip install -r requirements.txt
+WORKDIR /app
+COPY requirements.txt /app/
+RUN pip install -r requirements.txt
 
-   COPY *.py /app/
-   RUN chmod a+x *.py
+COPY *.py /app/
+RUN chmod a+x *.py
 
-   CMD ["python", "./main.py"]
-   ```
+CMD ["python", "./main.py"]
+```
 
 ## Build and run your new linkextractor API
 

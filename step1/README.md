@@ -80,8 +80,14 @@ docker build . -t linkextractor:v1.1
 docker run linkextractor:v1.1 https://docker.com
 ```
 
-## Move ahead to Step 2
+Notice you now see `--->` before every link!
 
 ```
-$ cd ../step2
+$ docker run linkextractor:v1.1 https://docker.com
+--> /
+--> /why-docker
+--> /resources/what-container
+--> /company
+--> /partners
 ```
+## Move ahead to Step 2
