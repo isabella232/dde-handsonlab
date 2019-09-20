@@ -1,4 +1,4 @@
-# Link Extractor: Step 3
+# Link Extractor: Step 3 - Docker Templates
 
 In this step we see a different way to cycle through a typical inner loop
 code-build-test cycle. In previous steps you made some code edits, then rebuilt
@@ -9,6 +9,9 @@ You will also add a web front-end service to the application so it can serve up
 both API and HTML endpoints. This requires running two services (2 different
 containers) so you will use a `docker-compose.yml` file to define the services
 and enable the Docker engine to run both services together.
+
+We will leverage Docker Application Designer and Docker Templates to
+provide a template to build our application on top off.
 
 ## Changes from the previous step
 
@@ -26,12 +29,30 @@ and enable the Docker engine to run both services together.
 
 ## Try it out
 
-1. Open up the `docker-compose.yml` file in your editor of choice. You can see
-   the two `services:` named `api` and `web`.
+1. Open up the Docker Application Designer, select `Choose a Template`, `Linux`
+   and select `Flask / Apache application`.
+   
+    ![]( ./images/image1.png)
+
+   * Please keep the default values for the Python and Apache version.
+   * By default the Application will be stored in `C:\Users\<user>\Documents\`
+
+    ![]( ./images/image2.png)
+
+2. Name the application and select `Scaffold`
+
+    ![]( ./images/image3.png)
+
+3. Once the Application Designer has downloaded the container images, extracted
+   out the applicatoin files. You can `Run` the application, directly from the
+   UI.
+
+    ![]( ./images/image4.png)
 
    * The `api` service will `build` from a Dockerfile in the `./api` directory
      and when running will expose port 5000 externally and map it to port 5000
      in the container.
+
    * The `web` service uses the Official PHP image from _Docker Hub_ and so it
      does not require a `build`. It will be listening on port 80 and also
      creates an environment variable in the container that passes the API endpoint
@@ -39,17 +60,18 @@ and enable the Docker engine to run both services together.
      is consumed. Also note the `volume` that is created: this maps the `./www`
      directory on your system to the `/var/www/html` directory inside the container.
      _This will enable us to continue editing the index.php file and see those
-     changes live in our running container.
-
-2. Run the app using `docker-compose` as follows:
-
-   ```
-   $ docker-compose up -d --build
-   ```
+     changes live in our running container.   
 
    Open [localhost](http://localhost) in a web browser and give your new web
    front-end a spin.  You can also try accessing the API directly. For example,
    [](http://localhost:5000/api/http://docker.com).
+
+   ![]( ./images/image5.png)
+
+4. Open up the directory where your application has been extracted too, and
+   follow the rest of this guide from that location.
+
+   ![]( ./images/image6.png)
 
 3. Now make some changes to the index.php web page to see how live editing
    works:
@@ -90,4 +112,10 @@ Ruby, etc.
 
 ## Cleanup
 
-`docker-compose down` to stop the app and its containers.
+Stop the application in the app designer
+
+  ![]( ./images/image7.png)
+
+Press Go Back to the My Applications Screen.
+
+  ![]( ./images/image8.png)
