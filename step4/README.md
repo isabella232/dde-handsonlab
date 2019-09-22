@@ -39,7 +39,7 @@ This directory is composed of 3 files:
    services it will deploy and the default variables for those services.
 
    ```
-   > docker app inspect
+   > docker app inspect linkextractor.dockerapp
    linkextractor 0.1.0
    
    Maintained by: Gordon the Turtle

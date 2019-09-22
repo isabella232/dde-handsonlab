@@ -1,0 +1,16 @@
+version: "3.6"
+services:
+  api:
+    image: ollypom/ee-templates-api:step4-v1
+    deploy:
+      replicas: ${api.replicas}
+    ports:
+    - ${api.port}:5000
+  www:
+    image: ollypom/ee-templates-web:step4-v2
+    deploy:
+      replicas: ${www.replicas}
+    environment:
+    - API_ENDPOINT=http://api:5000/api/
+    ports:
+    - ${www.port}:80
