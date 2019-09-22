@@ -1,0 +1,6 @@
+api:
+  port: 5000
+  replicas: 1
+www:
+  port: 80
+  replicas: 1
