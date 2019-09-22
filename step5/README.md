@@ -16,7 +16,7 @@ service with Kubernetes.
    
      ![]( ./images/image1.png)
    
-   To verify that Kubernetes is running succesfully, we can use the Kubernetes
+   To verify that Kubernetes is running successfully, we can use the Kubernetes
    command line tool `kubectl` which is installed by Docker Desktop Enterprise.
    
    ```powershell
@@ -31,9 +31,9 @@ service with Kubernetes.
    etcd-0               Healthy   {"health":"true"}
    ```
 
-2) Now that Kubernetes is up and running we are able to take our Link Extractor
+2) Now that Kubernetes is up and running, we are able to take our Link Extractor
    application and install it straight on to Kubernetes. Docker Desktop
-   Enteprise is able to convert a Docker Compose file into Kubernetes objects.
+   Enterprise is able to convert a Docker Compose file into Kubernetes objects.
 
    Navigate into the linkextractor.dockerapp directory and run:
 
@@ -55,7 +55,7 @@ service with Kubernetes.
 
    Once again you can open the web browser and navigate to "http://localhost"
 
-3) Our application is now succesfully running on Kubernetes. We can inspect the
+3) Our application is now successfully running on Kubernetes. We can inspect the
    Kubernetes objects such as Pods and Services to see more about the
    application.
 
@@ -87,9 +87,9 @@ service with Kubernetes.
    then using a Kubernetes Service to communicate between micro services, and to
    expose the application to the outside world.
 
-4) Once again we can use Docker App to upgrade our application even if it is
+4) Once again, we can use Docker App to upgrade our application even if it is
    running on Kubernetes. Similar to Step 4, we will use the `upgrade` sub
-   command, but this time we will use it to upgrade the App version. So far we
+   command, but this time we will use it to upgrade the App version. So far, we
    are on Docker App `0.1.0`, but in this directory there is a `0.2.0` of the
    app called `linkextractor2.dockerapp`.
 
@@ -104,8 +104,8 @@ service with Kubernetes.
    Application "linkextractor" upgraded on context "default"
    ```
 
-   We can make sure its the version `0.2.0` of our app by checking the status of
-   the application.
+   We can make sure it's version `0.2.0` by running the `docker app status` sub
+   command.
 
    ```powershell
    > docker app status linkextractor
@@ -142,7 +142,7 @@ service with Kubernetes.
    You can now browse to http://localhost again, and you should see a new title
    on the application, as well as a new background colour :)
 
-## Cleanup
+## Clean up
 
 Uninstall the application with:
 
@@ -150,5 +150,5 @@ Uninstall the application with:
 docker app uninstall linkextractor
 ```
 
-We will know longer be using Kubernetes in this lab, so feel free to go back
+We will no longer be using Kubernetes in this lab, so feel free to go back
 into the Docker Desktop Enterprise settings menu, and disable Kubernetes.

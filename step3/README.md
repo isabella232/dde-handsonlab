@@ -44,7 +44,7 @@ provide a template to build our application on top off.
     ![]( ./images/image3.png)
 
 3. Once the Application Designer has downloaded the container images, extracted
-   out the applicatoin files. You can `Run` the application, directly from the
+   out the application files. You can `Run` the application, directly from the
    UI.
 
     ![]( ./images/image4.png)

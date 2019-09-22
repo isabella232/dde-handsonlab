@@ -1,8 +1,8 @@
 # Link Extractor: Step 4 - Docker App
 
-Now that we have our application working perfectly! Its time to leverage [Docker
-App](https://github.com/docker/app) to make our Application even more portable,
-and to use a parameters file to make it environment agnostic!
+Now that we have our application working perfectly! It is time to leverage
+[Docker App](https://github.com/docker/app) to make our Application even more
+portable, and to use a parameters file to make it environment agnostic!
 
 ## Changes from the previous step
 
@@ -17,25 +17,25 @@ This directory is composed of 3 files:
 - `docker-compose.yml` - This file is something we have worked with in the
   previous steps. It contains instructions on how to deploy each service, and
   how each service will interact with the others. This Docker Compose file is
-  slightly different though. It contains variables for tuneable parametes.
+  slightly different though. It contains variables for tuneable parameters.
 
-- `metadata.yml` - This file contain identification metadata such as name,
+- `metadata.yml` - This file contains identification metadata such as name,
   version, description and maintainers of your containerised application.
 
 - `parameters.yml` - This final section specifies default values for application
-  parameter, this values will be inserted into the Docker Compose file at
+  parameter, these values will be inserted into the Docker Compose file at
   runtime.
 
-* As the application is nearly ready for production we have removed the mounted
-  php file for live editing. The www is now version controlled with a Docker
-  Image tag `v1` and `v2`.
+As the application is nearly ready for production, we have removed the mounted
+php file for live editing. The www is now version controlled with a Docker Image
+tag `v1` and `v2`.
 
 ## Try it out
 
 1) Using the `docker app` CLI syntax we are able to deploy and modify our
-   containerised appplication.
+   containerised application.
 
-   First lets inspect our Docker app to find out more information about what
+   First let's inspect our Docker app to find out more information about what
    services it will deploy and the default variables for those services.
 
    ```
@@ -65,8 +65,8 @@ This directory is composed of 3 files:
 
 2) Deploy a Docker App on to Docker Desktop Enterprise. A Docker App can be
    deployed on top of a Docker Swarm, a Kubernetes Cluster, or as standalone
-   containers. We will explore Kubernetes in Step 5, but first lets familirise
-   ourself with Docker App using Docker Swarm. 
+   containers. We will explore Kubernetes in Step 5, but first let’s familiarise
+   our self with Docker App using Docker Swarm. 
 
    Create a 1 node Docker Swarm cluster on Docker Desktop Enterprise
 
@@ -103,7 +103,7 @@ This directory is composed of 3 files:
 
    In our situation we have bundle 2 different 
 
-   First we are going to manually upgrade the Docker application to by scaling
+   First, we are going to manually upgrade the Docker application to by scaling
    the number of copies of the of the webserver.
 
    ```
@@ -149,10 +149,10 @@ This directory is composed of 3 files:
    rstihiqfr98p        linkextractor_api   replicated          1/1                 ollypom/ee-templates-api:step4-v1   *:5000->5000/tcp
    ```
 
-4) Finally we are going to show how to use a alternative paramaters file with
+4) Finally, we are going to show how to use an alternative parameters file with
    our application. In this scenario the application has been installed with the
    "testing" parameters, but we bundle a "production" parameters file into the
-   application bundle as well to be used when this application gets near our
+   application bundle as well to be used when this application gets near the
    production clusters.
 
    We can use the "upgrade" sub command again to change the application from the
@@ -207,7 +207,7 @@ This directory is composed of 3 files:
    `www.port: 8080`. Gives us the bit of information we need, if we now browse
    to http://localhost:8080 we can now use our application again.
 
-## Cleanup
+## Clean up
 
 For the next exercise we will be deploying our application slightly differently
 so will need to clean up the application and the swarm.
