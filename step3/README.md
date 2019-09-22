@@ -68,12 +68,17 @@ provide a template to build our application on top off.
 
    ![]( ./images/image5.png)
 
-4. Open up the directory where your application has been extracted too, and
+4. A Docker Template creates a full directory structure containing all
+   components of the application, a Dockerfile for each micro service, a
+   `docker-compose.yml` file and a docker-app file. We will use the docker app
+   more in Step 4.
+
+   Open up the directory where your application has been extracted too, and
    follow the rest of this guide from that location.
 
    ![]( ./images/image6.png)
 
-3. Now make some changes to the index.php web page to see how live editing
+   3. Now make some changes to the index.php web page to see how live editing
    works:
 
    * Try searching for "Link Extractor" and replacing it with "Super Link
