@@ -1,0 +1,75 @@
+apiVersion: v1alpha1
+kind: RepositoryContent
+templates:
+- apiVersion: v1alpha1
+  kind: ApplicationTemplate
+  metadata:
+    name: Flask / Apache application
+    platforms:
+    - linux
+  spec:
+    title: Flask / Apache application
+    description: Step 3 for Docker Desktop Hands on Lab
+    services:
+    - name: api
+      serviceId: le-python-api
+    - name: www
+      serviceId: le-www
+
+services: 
+- apiVersion: v1alpha1 
+  kind: ServiceTemplate
+  metadata:
+    name: le-python-api
+    platforms:
+      - linux
+  spec:
+    title: le-python-api
+    icon: https://d2.alternativeto.net/dist/icons/flask_27004.png?width=128&height=128&mode=crop&upscale=false
+    description: Python App to build on
+    source:
+      image: ollypom/ee-templates-api:v1
+    parameters:
+    - name: pythonver
+      defaultValue: "3.7"
+      description: Python version
+      type: enum
+      values:
+      - value: "3.6"
+        description: "3.6"
+      - value: "3.7"
+        description: "3.7"
+      - value: "3.8"
+        description: "3.8"
+    - name: apiport
+      defaultValue: "5000"
+      description: External port
+      type: hostPort    
+- apiVersion: v1alpha1 
+  kind: ServiceTemplate
+  metadata:
+    name: le-www
+    platforms:
+      - linux
+  spec:
+    title: le-www
+    icon: https://www.prchecker.info/free-icons/128x128/apache_128_px.png
+    description: Simple apache web server
+    source:
+      image: ollypom/ee-templates-web:v1
+    parameters:
+    - name: phpver
+      defaultValue: "7"
+      description: Python version
+      type: enum
+      values:
+      - value: "7"
+        description: "7"
+      - value: "7.1"
+        description: "7.1"
+      - value: "7.2"
+        description: "7.2"
+    - name: phpport
+      defaultValue: "80"
+      description: External port
+      type: hostPort

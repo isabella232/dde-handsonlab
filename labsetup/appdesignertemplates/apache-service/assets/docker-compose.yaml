@@ -1,0 +1,11 @@
+version: '3.6'
+
+services:
+  {{ .Name }}:
+    image: php:{{ .Parameters.phpver }}-apache
+    ports:
+      - "{{ .Parameters.phpport }}:80"
+    environment:
+      - API_ENDPOINT=http://api:5000/api/
+    volumes:
+      - ./www/web:/var/www/html
