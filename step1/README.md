@@ -86,7 +86,7 @@ docker run linkextractor:v1.1 https://docker.com
 Notice you now see `--->` before every link! Your app is coming right along.
 
 ```
-$ docker run linkextractor:v1.1 https://docker.com
+docker run linkextractor:v1.1 https://docker.com
 --> /
 --> /why-docker
 --> /resources/what-container
