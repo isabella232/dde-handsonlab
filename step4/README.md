@@ -162,7 +162,7 @@ It's time to deploy the Docker App on to the swarm cluster to start taking advan
 
    This production parameters file contains different variables for the ports our application runs on. It is quite common that port `80` will be unavailable in production clusters.
 
-   If we check the status of our application again, we can see what port the `www` service is running on in production.
+   If we check the status of our application again, we can see what port the `www` service is running in production.
 
    ```
    docker app status linkextractor
