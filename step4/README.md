@@ -199,7 +199,7 @@ It's time to deploy the Docker App on to the swarm cluster to start taking advan
 
    `www.port: 8080`. Gives us the bit of information we need, if we now browse to http://localhost:8080 we can now use our application again.
 
-## Clean up
+## Clean-up
 
 For the next exercise we will be deploying our application slightly differently so will need to clean up the application and the swarm.
 
@@ -214,3 +214,4 @@ Application "linkextractor" uninstalled on context "default"
 docker swarm leave --force
 Node left the swarm.
 ```
+Now move on to step5
