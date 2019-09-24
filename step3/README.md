@@ -1,36 +1,25 @@
 # Link Extractor: Step 3 - Docker Templates
 
-In this step we see a different way to cycle through a typical inner loop
-code-build-test cycle. In previous steps you made some code edits, then rebuilt
-the container and ran it again. There are plenty of tools that can automate that process for you, but it's not always necessary. Here you will see how to live test code changes
-without rebuilding the container each time.
+In this step we see a different way to cycle through a typical inner loop code-build-test cycle. In previous steps you made some code edits, then rebuilt the container and ran it again. There are plenty of tools that can automate that process for you, but it's not always necessary. Here you will see how to live test code changes without rebuilding the container each time.
 
-You will also add a web front-end service to the application so it can serve up
-both API and HTML endpoints. This requires running two services (2 different
-containers) so you will use Docker Compose (`docker-compose.yml`) to define the services
+You will also add a web front-end service to the application so it can serve up both API and HTML endpoints. This requires running two services (two different containers) so you will use Docker Compose (`docker-compose.yml`) to define the services
 and enable the Docker engine to run both services together.
 
-Notice that at this point, the `step3` directory is pretty empty. There is no Python code and no Dockerfile. This time, we will leverage Docker Application Designer and Docker Templates to
-scaffold all the code and files to build our application.
+Notice that at this point, the `step3` directory is pretty empty. There is no Python code and no Dockerfile. This time, we will leverage Docker Application Designer and Docker templates to scaffold all the code and files to build our application.
 
 ## Changes from the previous step
 
-* The link extractor JSON API service (written in Python) is moved in a
-  separate folder
+* The link extractor JSON API service (written in Python) has been moved into a separate folder
 * A web front-end application is written in PHP that talks to the JSON API
-* The PHP application is mounted inside the official `php:7-apache` Docker
-  image for easier modification during the development
-* The web application is accessible at
-  `http://<hostname>[:<prt>]/?url=<url-encoded-url>`
-* An environment variable `API_ENDPOINT` is used inside the PHP application to
-  configure it to talk to the JSON API server
-* A `docker-compose.yml` file is written to build various components and glue
-  them together
+* The PHP application is mounted inside the official `php:7-apache` Docker image for easier modification during development
+* The web application is accessible at `http://<hostname>[:<prt>]/?url=<url-encoded-url>`
+* An environment variable `API_ENDPOINT` is used inside the PHP application to configure it to talk to the JSON API server
+* A `docker-compose.yml` file is written to build various components and glue them together
 
 ## Try it out
 
-1. Open up the Docker Application Designer, select `Choose a Template`, `Linux`
-   and select `Flask / Apache application` - it should be the first template listed if you followed the Lab Setup instructions. It could also be the last template listed, depending on the order of the Library file you added.
+1.	Open up the Docker Application Designer via the Docker icon in the system tray and by selecting 'Design new application…'
+2.	Within Docker Application Designer, select `Choose a Template`, then `Linux` and select `Flask / Apache application` - it should be the first template listed if you followed the lab setup instructions. It could also be the last template listed, depending on the order of the Library file you added.
    
     ![]( ./images/image1.png)
     ![]( ./images/image2.png)
