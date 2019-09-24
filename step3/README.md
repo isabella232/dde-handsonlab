@@ -59,7 +59,7 @@ Notice that at this point, the `step3` directory is pretty empty. There is no Py
 
    4. Open [localhost](http://localhost) in a web browser and give your new web
    front-end a spin.  You can also still access the API directly. For example,
-   [](http://localhost:5000/api/http://docker.com).
+   ![](http://localhost:5000/api/http://docker.com).
 
    ![]( ./images/image5.png)
 
@@ -75,18 +75,17 @@ Notice that at this point, the `step3` directory is pretty empty. There is no Py
 
 5. Now make some changes to the index.php web page to see how live editing works:
 
-   * Try searching for "Link Extractor" and replacing it with "Super Link
-     Extractor T-1000". There should be 3 instances of "Link Extrator" in the
-     original code. Save the file and then refresh the web page (not the API page).
+   * Try searching for "Link Extractor" and replacing it with "Super Link Extractor T-1000". There should be 3 instances of "Link Extrator" in the original code. Save the file and then refresh the web page (not the API page).
+   
      You should immediately see the text changes in the web page.
 
-   * Try changing some of the colors in the CSS. For example, search for the
-     `background:` style in the `html{}` selector and change the color to
-     `#E9EBEE`. Refresh again and you should see the changes immediately.
+   * Try changing some of the colours for the background of the web application. For example, search for the `background:` style in the `html{}` selector and change the colour to `#E9EBEE` from `#EAE7D6`.
+
+   Refresh the web browser again and you should a subtle change in the colour of the background immediately.
 
 ## The new dev-test inner loop
 
-Mounting the source code directly in the container is fast way to iterate and test your changes, particularly for interpreted languages like PHP, Python, Ruby, etc. 
+Mounting the source code directly in the container is a fast way to iterate and test your changes, particularly for interpreted languages like PHP, Python, Ruby, etc. 
 
 You can also live debug compiled languages like Java, but that's for [another workshop](https://blog.docker.com/2016/09/java-development-using-docker/).
 
@@ -107,13 +106,14 @@ These images can be digitally signed, to authenticate their contents and the fac
 
 ## Cleanup
 
-Stop the application in the app designer
+Stop the application from within the Docker Application Designer interface
 
   ![]( ./images/image7.png)
 
-Press Go Back to the My Applications Screen.
+then select the “back” button (chevron) to go back to My Applications screen
 
   ![]( ./images/image8.png)
 
 You're now ready to proceed to Step 4:
+
 `cd ../step4`
