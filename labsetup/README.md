@@ -1,16 +1,20 @@
-# DDE Hands on Lab, Lab Setup
+# DDE Hands on Lab: Lab Setup
 
 If you are following this lab within a Docker sponsored classroom environment
-there is no setup required. The wonderful elves have done it for you :) 
+there is no setup required. The wonderful elves have done it for you :)
 
-If you are doing this lab as a lone ranger you wil need to set up a few things.
+If you are doing this lab as a lone ranger you will need to set up a few things.
 
-## Desktop Enterprise
+## Docker Desktop Enterprise
 
-Please make sure you have Docker Desktop Enterprise setup and configured on your
-environment. For more details see
-https://docs.docker.com/docker-for-windows/install/ or
-https://docs.docker.com/ee/desktop/admin/install/windows/. 
+These labs were written for Docker Desktop Enterprise. Please make sure you have Docker Desktop Enterprise setup and configured on your
+environment. You can also use Docker Desktop Community, but some steps will not apply. For more details see:
+* Windows:
+  * [Docker Desktop Enterprise on Windows](https://docs.docker.com/ee/desktop/admin/install/windows/)
+  * [Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/install/) or
+* macOS
+  * [Docker Desktop Enterprise for macOS](https://docs.docker.com/ee/desktop/admin/install/mac/)
+  * [Docker Desktop for macOS](https://docs.docker.com/docker-for-mac/install/)
 
 ## Git Clone the Repo
 
@@ -22,7 +26,7 @@ and then work through it.
 git clone https://github.com/ollypom/dde-handsonlab
 ```
 
-## Applicaion Designer Library 
+## Application Designer Library
 
 The Docker Desktop Enterprise Application Designer is configured with a stock
 library of Application templates. You will need to add an additional custom
@@ -30,10 +34,10 @@ library for this hands on lab.
 
 The library configuration file is located at:
 
-   * `/home/<user>/.docker/application-template/preferences.yaml`
+   * `/Users/<user>/.docker/application-template/preferences.yaml`
    * `C:\Users\<user>\.docker\application-template\preferences.yaml`
 
-   This file should look like:
+   You need to add a new repository, which is shown below as the `custom-services` repository. The file should look like this when you're done:
 
    ```yaml
    apiVersion: v1alpha1
@@ -46,7 +50,9 @@ The library configuration file is located at:
      url: https://docker-application-template.s3.amazonaws.com/production/v0.1.5/library.yaml
    ```
 
+If you've done all the setup correctly you should be able to click your Docker Desktop Enterprise icon (Moby whale), then `Design new application...`, then when Application Designer appears you can click `Choose a template` and you should see this template:
+![App Designer](./images/labsetupAppDesigner.png)
+
 ## Enjoy
 
-Your good to go. Enjoy. Please submit issues / PRs if you find ways to improve
-the lab :) 
+You are good to go. Enjoy. Please submit issues / PRs if you find ways to improve the lab :)

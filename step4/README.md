@@ -1,42 +1,27 @@
 # Link Extractor: Step 4 - Docker App
 
-Now that we have our application working perfectly! It is time to leverage
-[Docker App](https://github.com/docker/app) to make our Application even more
-portable, and to use a parameters file to make it environment agnostic!
+Our application is working perfectly and we're well on our way to Unicorn status! It is time to leverage
+[Docker App](https://github.com/docker/app) to make our Application even more portable, and to use a parameters file to make it environment agnostic! You saw parameters exposed in the Template you used in Application Designer earlier.
 
 ## Changes from the previous step
 
-You will notice the Application Designer created a directory `step3.dockerapp`.
-This is something we haven't used previously and provides a way for us to
-distribute our application, as an application composed of multiple
-microservices. We have copied over a `dockerapp` file into this directory for
-you to complete the lab with.
+You will notice the Application Designer created a directory `step3.dockerapp`. This is something we haven't used previously and provides a way for us to distribute our entire application at once, as including all of our microservices and the parameters that can be used for deployment. We have copied over a `linkextractor.dockerapp` into the `step4` directory for you to complete the lab with.
 
-This directory is composed of 3 files:
+The `linkextractor.dockerapp` directory is composed of 3 files:
 
-- `docker-compose.yml` - This file is something we have worked with in the
-  previous steps. It contains instructions on how to deploy each service, and
-  how each service will interact with the others. This Docker Compose file is
-  slightly different though. It contains variables for tuneable parameters.
+- `docker-compose.yml` - This file is something we have worked with in the previous steps. It contains instructions on how to deploy each service, and how each service will interact with the others. This Docker Compose file is slightly different though. It contains variables for tuneable parameters.
 
-- `metadata.yml` - This file contains identification metadata such as name,
-  version, description and maintainers of your containerised application.
+- `metadata.yml` - This file contains identification metadata such as name, version, description and maintainers of your containerised application.
 
-- `parameters.yml` - This final section specifies default values for application
-  parameter, these values will be inserted into the Docker Compose file at
-  runtime.
+- `parameters.yml` - This final section specifies default values for application parameters, these values will be inserted into the Docker Compose file at runtime.
 
-As the application is nearly ready for production, we have removed the mounted
-php file for live editing. The www is now version controlled with a Docker Image
-tag `v1` and `v2`.
+As the application is nearly ready for production, we have removed the mounted php file for live editing. The www is now version controlled with a Docker Image tag `v1` and `v2`.
 
 ## Try it out
 
-1) Using the `docker app` CLI syntax we are able to deploy and modify our
-   containerised application.
+1. Using the `docker app` CLI syntax we are able to deploy and modify our containerised application.
 
-   First let's inspect our Docker app to find out more information about what
-   services it will deploy and the default variables for those services.
+   First let's inspect our Docker app to find out more information about what services it will deploy and the default variables for those services.
 
    ```
    > docker app inspect linkextractor.dockerapp
@@ -59,14 +44,9 @@ tag `v1` and `v2`.
    www.replicas   1
    ```
 
-   As shown in step 3, we can see our Docker Application is composed of an API
-   tier and Web Tier. We can also see that by default the ports each container
-   will expose itself on.
+   As shown in the previous exercise (step 3), we can see our Docker Application is composed of an API tier and Web Tier. We can also see that by default the ports each container will expose itself on.
 
-2) Deploy a Docker App on to Docker Desktop Enterprise. A Docker App can be
-   deployed on top of a Docker Swarm, a Kubernetes Cluster, or as standalone
-   containers. We will explore Kubernetes in Step 5, but first let’s familiarise
-   our self with Docker App using Docker Swarm. 
+2) Deploy a Docker App on to Docker Desktop Enterprise. A Docker App can be deployed on top of a Docker Swarm, a Kubernetes Cluster, or as standalone containers. We will explore Kubernetes in Step 5, but first let’s familiarise our self with Docker App using Docker Swarm.
 
    Create a 1 node Docker Swarm cluster on Docker Desktop Enterprise
 
@@ -94,17 +74,17 @@ tag `v1` and `v2`.
    Creating service linkextractor_api
    Application "linkextractor" installed on context "default"
    ```
-
+  
    Once again open the Web Browser and inspect our Application. http://localhost
 
-3) You can use Docker App to "Upgrade" a running an Application. An upgrade
-   could be to a new version of the image, changing parameters or changing the
-   number of containers within the service.
+   NOTE: If you get an error, make sure you have stopped your application from the previous exercise. Open the Application Designer window and click the "Stop" button. You also need to be in the `linkextractor.dockerapp` directory when you run the `docker app install` command (or change the last option in the command to `./linkextractor.dockerapp`)
 
-   In our situation we have bundle 2 different 
 
-   First, we are going to manually upgrade the Docker application to by scaling
-   the number of copies of the of the webserver.
+3) You can use Docker App to "Upgrade" a running an Application. An upgrade could be to a new version of the image, changing parameters or changing the number of containers within the service.
+
+   In our situation we have bundle 2 different services, just as we had before: an apache-based `www` and Python/Flask `api`.
+
+   First, we are going to manually upgrade the Docker application to by scaling the number of copies of the of the webserver.
 
    ```
    > docker app upgrade linkextractor --set www.replicas=2
@@ -164,7 +144,8 @@ tag `v1` and `v2`.
    Updating service linkextractor_www (id: h1czrmxu3geu37lqq6f39wc73)
    Application "linkextractor" upgraded on context "default"
    ```
-   
+   NOTE: Use the command `docker app upgrade linkextractor --parameters-file ./parameters/production.yml` on macOS or Linux.
+
    This production parameters file contains different variables for the ports
    our application runs on. It is quite common that port `80` will be
    unavailable in production clusters.

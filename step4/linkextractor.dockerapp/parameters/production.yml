@@ -2,5 +2,5 @@ api:
   port: 5000
   replicas: 1
 www:
-  port: 80
+  port: 8080
   replicas: 1
