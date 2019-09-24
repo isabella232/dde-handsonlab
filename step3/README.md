@@ -19,32 +19,33 @@ Notice that at this point, the `step3` directory is pretty empty. There is no Py
 ## Try it out
 
 1.	Open up the Docker Application Designer via the Docker icon in the system tray and by selecting 'Design new application…'
-2.	Within Docker Application Designer, select `Choose a Template`, then `Linux` and select `Flask / Apache application` - it should be the first template listed if you followed the lab setup instructions. It could also be the last template listed, depending on the order of the Library file you added.
+2.	Within Docker Application Designer, select `Choose a template`, then `Linux` and select `Flask / Apache application` - it should be the first template listed if you followed the lab setup instructions. It could also be the last template listed, depending on the order of the Library file you added.
    
     ![]( ./images/image1.png)
+    
+    Now select Continue
+    
     ![]( ./images/image2.png)
 
    * Please keep the default values for the Python and Apache version, but note that these can be parameterized to make them selectable.
-      * Almost any setting in the Dockerfile and Compose files can be parameterized in this way. We'll look at Docker App parameters in later steps, but we will not be covering Template creation in these labs.
-   * By default the Application will be stored in `C:\Users\<user>\Documents\` on Windows or `~/Documents/` on macOS.
+      * Almost any setting in the Dockerfile and Compose files can be parameterized in this way. We'll look at Docker App parameters in later steps, but we will not be covering template creation in these labs.
+   * By default, the Application will be stored in `C:\Users\<user>\Documents\` on Windows or `~/Documents/` on macOS.
 
-2. Name the application and select `Scaffold`
+3. Name the application (e.g. step3 or any name of your choice) and select `Scaffold`
 
     ![]( ./images/image3.png)
+    
+    Select `Show logs` to view the logs as Docker scaffolds the application files.
 
     * Once the scaffolding is complete, you can see all the files that were created in the folder you entered above. There is an `api` directory, which is where your Python code for the linkextractor now sits, and a `www` folder, which is the fancy new web front-end. You'll see a Dockerfile and a docker-compose.yml file in the tree as well. The Docker Template has created all of this for you.
     * Templates are often used to hold skeleton code along with the files Docker needs to run your application. You can put almost anything you want in a Template, include IDE plug-ins, documentation, etc.
     * Later you can try clicking through some of the other built-in templates to get an idea of what's possible.
 
-3. Once the Application Designer has downloaded the container images, extracted
-   out the application files. You can `Run` the application, directly from the
-   UI.
+3. Once the Application Designer has downloaded the container images, extracted out the application files. You can `Run` the application directly from the UI.
 
     ![]( ./images/image4.png)
 
-   * The `api` service will `build` from a Dockerfile in the `./api` directory
-     and when running will expose port 5000 externally and map it to port 5000
-     in the container. You'll see the logs for this in the Application Designer window - it looks very much like what you saw when you manually built and ran the Docker image yourself.
+   * The `api` service will `build` from a Dockerfile in the `./api` directory and when running will expose port 5000 externally and map it to port 5000 in the container. You'll see the logs for this in the Application Designer window - it looks very much like what you saw when you manually built and ran the Docker image yourself.
 
    * The `web` service uses the Official PHP image from _Docker Hub_ and so it does not require a `build`. It will be listening on port 80 and also creates an environment variable in the container that passes the API endpoint location; you can inspect the code in `www/web/index.php` to see how this env var is consumed. 
       * If you check out the `docker-compose.yaml` file you should also notice that a `volume` is created: this maps the `./www/web` directory on your system to the `/var/www/html` directory inside the container:
