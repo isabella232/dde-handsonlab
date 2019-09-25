@@ -40,8 +40,6 @@ can be distributed through the simple `push` and `pull` syntax.
    Feel free to browse to the Docker Hub and checkout our pushed Docker App.
 
    `https://hub.docker.com/r/<hub-id>/linkextractor`
-   `https://hub.docker.com/r/<hub-id>/ee-templates-web` 
-   `https://hub.docker.com/r/<hub-id>/ee-templates-api`
 
 3. You can delete `docker image rm` all local copies of the Link Extractor app as it is now
    stored in Docker Hub.
