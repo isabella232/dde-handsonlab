@@ -39,9 +39,9 @@ can be distributed through the simple `push` and `pull` syntax.
    ```
    Feel free to browse to the Docker Hub and checkout our pushed Docker App.
 
-   https://hub.docker.com/r/<hub-id>/linkextractor
-   https://hub.docker.com/r/<hub-id>/ee-templates-web
-   https://hub.docker.com/r/<hub-id>/ee-templates-api
+   The https://hub.docker.com/r/ <hub-id>/linkextractor
+   https://hub.docker.com/r/ <hub-id>/ee-templates-web
+   https://hub.docker.com/r/ <hub-id>/ee-templates-api
 
 3) Now you can delete all local copies of the Link Extractor app as it is now
    stored in the Docker Hub.
