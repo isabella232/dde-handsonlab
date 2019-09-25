@@ -39,19 +39,18 @@ can be distributed through the simple `push` and `pull` syntax.
    ```
    Feel free to browse to the Docker Hub and checkout our pushed Docker App.
 
-   The https://hub.docker.com/r/ <hub-id>/linkextractor
+   https://hub.docker.com/r/<hub-id>/linkextractor
    https://hub.docker.com/r/ <hub-id>/ee-templates-web
    https://hub.docker.com/r/ <hub-id>/ee-templates-api
 
-3) Now you can delete all local copies of the Link Extractor app as it is now
-   stored in the Docker Hub.
+3) You can delete `docker image rm` all local copies of the Link Extractor app as it is now
+   stored in Docker Hub.
 
    ```powershell
-   rm linkextractor.dockerapp
-   docker image rm <hub-id>/linkextractor:v1-invoc
+   > docker image rm <hub-id>/linkextractor:v1-invoc
    ```
 
-4) Now can inspect our remote Docker App. 
+4) Now we can inspect our remote Docker App. 
 
    ```powershell
    > docker app inspect <hub-id>/linkextractor:v1
@@ -79,11 +78,16 @@ can be distributed through the simple `push` and `pull` syntax.
    ```
 
 5) Finally, we can pull down our remote Docker App and run it locally without
-   the files extracted on to our system. We do need to enable a Container
-   Orchestrator though to run out application.
+   the files extracted on to our system. To do this we need to enable a Container
+   Orchestrator to run our application.
 
-   ```
+   ```powershell
    > docker swarm init
+   ```
+   You may receive the following response if you have already initiated a swarm
+   
+   > Error response from daemon: This node is already part of a swarm. Use "docker swarm leave" to leave this swarm and join another one.
+
    
    > docker app install <hub-id>/linkextractor:v1
    WARNING: installing over previously failed installation "linkextractor"
