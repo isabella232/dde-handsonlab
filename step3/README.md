@@ -59,7 +59,8 @@ Notice that at this point, the `step3` directory is pretty empty. There is no Py
 
    4. Open [localhost](http://localhost) in a web browser and give your new web
    front-end a spin.  You can also still access the API directly. For example,
-   ![](http://localhost:5000/api/http://docker.com).
+   ```(http://localhost:5000/api/http://docker.com)
+   ```
 
    ![]( ./images/image5.png)
 
@@ -68,7 +69,7 @@ Notice that at this point, the `step3` directory is pretty empty. There is no Py
    `docker-compose.yml` file and a docker-app file. We will use the docker app
    more in Step 4.
 
-   Open up the directory where your application has been extracted too, and
+   Open up the directory where your application has been extracted to, and
    follow the rest of this guide from that location.
 
    ![]( ./images/image6.png)
