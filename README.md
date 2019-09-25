@@ -69,7 +69,7 @@ Server: Docker Engine - Enterprise
 
 > If there was a problem, please notify an instructor!
 
-Open your IDE (Visual Studio Code is installed on all lab machines) and start working
+Open your IDE (Visual Studio Code is installed on all lab machines) and start working.
 through the labs
 
 Enjoy!
