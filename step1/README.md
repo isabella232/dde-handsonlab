@@ -101,3 +101,6 @@ So far you've seen a very basic method for getting your code into a container an
 You can run that container on any machine where the Docker Engine resides and it will work the same way. The Dockerfile is the code for creating the container image. It can be stored with the source code so that if the container image doesn't exist locally, the Docker Engine can build it for you. Later, we'll see how to push the image to a repository so that you can share it with others.
 
 ## Move ahead to Step 2
+```bash
+   > cd ../step2
+```
