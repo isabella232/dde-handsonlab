@@ -26,7 +26,7 @@ In Step 4 we started using Docker App locally against a one node Docker Swarm cl
 
 2. Now that Kubernetes is up and running, we are able to take our 'Link Extractor' Docker App and install it straight on to Kubernetes. Docker Desktop Enterprise is able to convert a Docker Compose file used in the Docker App into Kubernetes objects.
 
-   Navigate into the step5 linkextractor.dockerapp directory and run:
+   Navigate into the `step5`, `linkextractor.dockerapp` directory and run:
 
    ```powershell
    > docker app install --name linkextractor --orchestrator kubernetes .
@@ -126,12 +126,15 @@ Docker Apps are a new, open source tool built on the [CNAB](https://cnab.io) spe
 * [Using Docker App in Development](https://blog.mikesir87.io/2019/03/using-docker-app-in-development/) which details multiple development teams work together on an application, using the Docker App spec as the key artifact
 * [Keeping Docker App Updated](https://blog.mikesir87.io/2019/03/keeping-docker-app-updated/) details how Michael's team uses CI to keep their Docker App spec up-to-date with all the latest code changes
 
-## Clean up
+## Clean-up
 
 Uninstall the application with:
 
 ```powershell
-docker app uninstall linkextractor
+   > docker app uninstall linkextractor
 ```
 
 We will no longer be using Kubernetes in this lab, so feel free to go back into the Docker Desktop Enterprise settings menu, and disable Kubernetes.
+
+## Proceed to Step 6
+
