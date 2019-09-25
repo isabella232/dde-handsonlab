@@ -86,7 +86,10 @@ can be distributed through the simple `push` and `pull` syntax.
    ```
    You may receive the following response if you have already initiated a swarm.
    
-   > Error response from daemon: This node is already part of a swarm. Use "docker swarm leave" to leave this swarm and join another one.<
+   ```text
+   Error response from daemon: This node is already part of a swarm. Use "docker swarm leave" to leave this swarm and join another one.
+   ```
+   
    You can ignore this message and continue.
 
    ```powershell
