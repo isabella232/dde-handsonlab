@@ -117,6 +117,3 @@ then select the “back” button (chevron) to go back to 'My Applications' scre
 
 ## Proceed to Step 4
 
-```bash
-   > cd ../step4
-   ```
