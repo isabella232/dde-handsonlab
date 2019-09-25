@@ -48,11 +48,11 @@ Within your terminal, navigate to the step4 directory and run:
    www.replicas   1
    ```
 
-As shown in the previous exercise (step3), we can see our Docker application is composed of an API tier and web tier. We can also see the default ports each container will expose itself on.
+As shown in the previous exercise (Step 3), we can see our Docker application is composed of an API tier and web tier. We can also see the default ports each container will expose itself on.
 
 2. Deploy a Docker App on to Docker Desktop Enterprise.
 
-A Docker App can be deployed on top of a Docker Swarm, a Kubernetes Cluster, or as standalone containers. We will explore Kubernetes in step5, but first let’s familiarise our self with Docker App using Docker Swarm.
+A Docker App can be deployed on top of a Docker Swarm, a Kubernetes Cluster, or as standalone containers. We will explore Kubernetes in Step 5, but first let’s familiarise our self with Docker App using Docker Swarm.
 
 Create a one node Docker Swarm cluster on Docker Desktop Enterprise
 
