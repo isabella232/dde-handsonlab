@@ -39,7 +39,6 @@ machine. Open a Terminal and run:
 
 ```bash
 > docker version
-
 Client: Docker Engine - Enterprise
  Version:           19.03.2
  API version:       1.40
