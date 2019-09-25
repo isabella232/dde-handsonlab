@@ -14,10 +14,12 @@ can be distributed through the simple `push` and `pull` syntax.
 
 ## Try it out
 
-1) First, we need to login to Docker Desktop using your Docker ID.
+1) First, we need to login to Docker Desktop using your Docker ID.  Enter your username and password when prompted
 
    ```powershell
-   docker login <hub-id>
+   > docker login
+   Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to             https://hub.docker.com to create one.
+   Username:
    ```
 
 2) Docker Applications can be pushed and pulled as OCI container images. This
