@@ -57,4 +57,5 @@ If you've done all the set-up correctly you should be able to click your Docker 
 
 You are good to go. Enjoy!
 
+## Issues
 Please submit issues / PRs if you find ways to improve the lab :)
