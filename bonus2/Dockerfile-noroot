@@ -1,0 +1,15 @@
+FROM python:3.7-alpine
+LABEL maintainer="<your name>"
+
+RUN addgroup -g 10000 -S linkextractor && \
+    adduser  -u 10000 -S linkextractor -G linkextractor -H -s /bin/false && \
+    apk --no-cache add su-exec
+
+WORKDIR /app
+COPY --chown=linkextractor:linkextractor requirements.txt /app/ 
+RUN pip install -r requirements.txt && chown linkextractor:linkextractor /app
+
+COPY --chown=linkextractor:linkextractor *.py /app/
+RUN chmod a+x *.py
+
+CMD ["su-exec", "linkextractor", "python", "./main.py"]
