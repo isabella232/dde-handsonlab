@@ -105,16 +105,18 @@ These images can be digitally signed, to authenticate their contents and the fac
   * You can try it by changing to the api directory and running this command. Use `docker image ls linkextractor_api` to see the resulting image.
   * NOTE: You might need to do a `git init`, `git add -A`, and `git commit` before the `docker build` command.
 
-## Cleanup
+## Clean-up
 
 Stop the application from within the Docker Application Designer interface
 
   ![]( ./images/image7.png)
 
-then select the “back” button (chevron) to go back to My Applications screen
+then select the “back” button (chevron) to go back to 'My Applications' screen
 
   ![]( ./images/image8.png)
 
-You're now ready to proceed to Step 4:
+## Proceed to Step 4
 
-`cd ../step4`
+```bash
+   > cd ../step4
+   ```
