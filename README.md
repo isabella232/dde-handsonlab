@@ -25,9 +25,8 @@ illustrates step by step approach to learn [Docker](https://www.docker.com/).
 It starts from running a very basic Python script and gradually leads to a
 multi-service container orchestration (AKA micro-service architecture).
 
-**No Python skills required** This workshop uses a Python example but no Python
-expertise is assumed or required. Step 6 switches to Ruby, but again, no Ruby
-knowledge is required.
+**No Python skills required**
+This workshop uses a Python example but no Python expertise is assumed or required. Step 6 switches to Ruby, but again, no Ruby knowledge is required.
 
 ## How to Use the Repository
 
