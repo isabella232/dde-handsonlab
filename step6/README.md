@@ -28,12 +28,15 @@ can be distributed through the simple `push` and `pull` syntax.
    distribute our Docker Application.
 
    A simple `docker app push` will embed the local file structure into an OCI
-   image and push this to a container registry.
+   image and push this to a container registry.  Navigate into the `step6` directory and run
 
    ```powershell
    > docker app push linkextractor.dockerapp --tag <hub-id>/linkextractor:v1
    ```
-
+   If successful you will receive the following response:
+   ```bash
+   Successfully pushed bundle to docker.io/<hub-id>/linkextractor:v1.
+   ```
    Feel free to browse to the Docker Hub and checkout our pushed Docker App.
 
    https://hub.docker.com/r/<hub-id>/linkextractor
