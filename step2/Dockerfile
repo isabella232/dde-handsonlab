@@ -8,4 +8,4 @@ WORKDIR    /app
 COPY       linkextractor.py /app/
 RUN        chmod a+x linkextractor.py
 
-ENTRYPOINT ["./linkextractor.py"]
+ENTRYPOINT ["python", "./linkextractor.py"]
