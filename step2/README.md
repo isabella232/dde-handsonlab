@@ -20,6 +20,7 @@ You can see the code in your editor of choice, if interested.
   > docker build . -t linkextractor:v2
   > docker container run -it --rm linkextractor:v2 http://docker.com/
 ```
+* --rm removes the container after exiting it.
 
 The only difference between v1 and v2 of the ‘linkextractor’ app at this point, is that we now have full URLs in the output once the app is executed as seen below.
 
@@ -32,7 +33,6 @@ The only difference between v1 and v2 of the ‘linkextractor’ app at this poi
   [Partners](http://docker.com/partners)
   [Products](http://docker.com/products)
 ```
-* --rm removes the container after exiting.
 
 The main changes in the `linkextractor.py` are for this next section :D
 
