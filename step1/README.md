@@ -51,14 +51,14 @@ ENTRYPOINT ["python", "./linkextractor.py"]
 Build the docker image with a name:tag of linkextractor:v1
 
 ```bash
-docker build . -t linkextractor:v1
+> docker build . -t linkextractor:v1
 ```
 
 ## Run the container
 Run the container from the image, passing any URL as the parameter.  In the example below we have used https://docker.com as the URL.
 
 ```bash
-docker run linkextractor:v1 https://docker.com
+> docker run linkextractor:v1 https://docker.com
 ```
 
 ## Run through your inner loop
@@ -81,19 +81,19 @@ To demonstrate how you might code and test locally we'll make a minor modificati
 4. Build and run the containers again. Notice the `v1.1` tag. This helps tell the images apart and prevents overwriting the first image you created.
 
 ```bash
-docker build . -t linkextractor:v1.1
-docker run linkextractor:v1.1 https://docker.com
+   > docker build . -t linkextractor:v1.1
+   > docker run linkextractor:v1.1 https://docker.com
 ```
 
 Notice you now see `--->` before every link! Your app is coming right along.
 
-```
-docker run linkextractor:v1.1 https://docker.com
---> /
---> /why-docker
---> /resources/what-container
---> /company
---> /partners
+```powershell
+   > docker run linkextractor:v1.1 https://docker.com
+   --> /
+   --> /why-docker
+   --> /resources/what-container
+   --> /company
+   --> /partners
 ```
 
 So far you've seen a very basic method for getting your code into a container and running it. With containerization, all the dependencies your code need are isolated in the container itself, instead of installing all that software on your own machine.
