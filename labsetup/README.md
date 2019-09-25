@@ -29,8 +29,8 @@ git clone https://github.com/ollypom/dde-handsonlab
 ## Application Designer Library
 
 The Docker Desktop Enterprise Application Designer is configured with a stock
-library of Application templates. You will need to add an additional custom
-library for this hands on lab.
+library of application templates. You will need to add an additional custom
+library for this hands on lab.  Edit the library configuration file in a text editor
 
 The library configuration file is located at:
 
@@ -50,7 +50,7 @@ The library configuration file is located at:
      url: https://docker-application-template.s3.amazonaws.com/production/v0.1.5/library.yaml
    ```
 
-If you've done all the setup correctly you should be able to click your Docker Desktop Enterprise icon (Moby whale), then `Design new application...`, then when Application Designer appears you can click `Choose a template` and you should see this template:
+If you've done all the set-up correctly you should be able to click your Docker Desktop Enterprise icon (Moby whale), then `Design new application...`, then when Application Designer appears you can click `Choose a template` and you should see this template:
 ![App Designer](./images/labsetupAppDesigner.png)
 
 ## Enjoy
