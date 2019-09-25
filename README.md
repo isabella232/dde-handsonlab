@@ -38,7 +38,7 @@ Before you get started, verify the Docker Desktop Enterprise is working on your
 machine. Open a Terminal and run:
 
 ```bash
-PS C:\Users\oppom> docker version
+> docker version
 
 Client: Docker Engine - Enterprise
  Version:           19.03.2
@@ -67,7 +67,6 @@ Server: Docker Engine - Enterprise
  docker-init:
   Version:          0.18.0
   GitCommit:        fec3683
-PS C:\Users\oppom>
 ```
 
 > If there was a problem, please notify an instructor!
