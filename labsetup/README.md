@@ -53,6 +53,8 @@ The library configuration file is located at:
 If you've done all the set-up correctly you should be able to click your Docker Desktop Enterprise icon (Moby whale), then `Design new application...`, then when Application Designer appears you can click `Choose a template` and you should see this template:
 ![App Designer](./images/labsetupAppDesigner.png)
 
-## Enjoy
+## Enjoy!
 
-You are good to go. Enjoy. Please submit issues / PRs if you find ways to improve the lab :)
+You are good to go. Enjoy!
+
+Please submit issues / PRs if you find ways to improve the lab :)
