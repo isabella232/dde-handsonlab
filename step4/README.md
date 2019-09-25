@@ -25,16 +25,10 @@ As the application is nearly ready for production, we have removed the mounted p
 
 First let's inspect our Docker app to find out more information about what services it will deploy and the default variables for those services.
    
-Within your terminal, navigate to the step4 directory
+Within your terminal, navigate to the step4 directory and run:
 
-   ```
-   cd ../../../step4/linkextractor.dockerapp
-   
-   docker app inspect linkextractor.dockerapp
-   ```
-You should a similar outout to the following:
-   
-   ```
+   ```powershell   
+   > docker app inspect linkextractor.dockerapp
    linkextractor 0.1.0
    
    Maintained by: Gordon the Turtle
@@ -62,15 +56,15 @@ A Docker App can be deployed on top of a Docker Swarm, a Kubernetes Cluster, or 
 
 Create a one node Docker Swarm cluster on Docker Desktop Enterprise
 
-   ```
-   docker swarm init
+   ```powershell
+   > docker swarm init
    Swarm initialized: current node (qx8qqtlyhory19tr9xw15loxg) is now a manager
    ```
 
 You can view the one node cluster with the following command:
 
-   ```
-   docker node list
+   ```powershell
+   > docker node list
    
    ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
    qx8qqtlyhory19tr9xw15loxg *   docker-desktop      Ready               Active              Leader              19.03.2
@@ -78,9 +72,8 @@ You can view the one node cluster with the following command:
 
 It's time to deploy the Docker App on to the swarm cluster to start taking advantage of that wonderful packaging. Navigate into the `linkextractor.dockapp` directory if you have not already done so, and run:
 
-   ```
-   docker app install --name linkextractor .
-   
+   ```powershell
+   > docker app install --name linkextractor .
    Creating network linkextractor_default
    Creating service linkextractor_www
    Creating service linkextractor_api
@@ -97,8 +90,8 @@ It's time to deploy the Docker App on to the swarm cluster to start taking advan
 
    First, we are going to manually upgrade the Docker application by scaling the number of copies of the webserver.
 
-   ```
-   docker app upgrade linkextractor --set www.replicas=2
+   ```powershell
+   > docker app upgrade linkextractor --set www.replicas=2
    ```
    
    a successul upgrade will return similar output to the following
@@ -111,9 +104,8 @@ It's time to deploy the Docker App on to the swarm cluster to start taking advan
 
    Now if you get the status of the link extractor application, you can see that the application state has changed. We now have two web servers running the `www` service.
 
-   ```
-   docker app status linkextractor
-   
+   ```powershell
+   > docker app status linkextractor
    INSTALLATION
    ------------
    Name:         linkextractor
@@ -148,9 +140,8 @@ It's time to deploy the Docker App on to the swarm cluster to start taking advan
 
    We can use the `upgrade` sub command again to change the application from the testing parameters file to the production file.
 
-   ```
-   docker app upgrade linkextractor --parameters-file .\parameters\production.yml
-   
+   ```powershell
+   > docker app upgrade linkextractor --parameters-file .\parameters\production.yml 
    Updating service linkextractor_api (id: rstihiqfr98pyys8j0bvar55i)
    Updating service linkextractor_www (id: h1czrmxu3geu37lqq6f39wc73)
    Application "linkextractor" upgraded on context "default"
@@ -158,15 +149,16 @@ It's time to deploy the Docker App on to the swarm cluster to start taking advan
    
    NOTE: on macOS or Linux use the following command
    
-   `docker app upgrade linkextractor --parameters-file ./parameters/production.yml`
+   ```bash
+   $ docker app upgrade linkextractor --parameters-file ./parameters/production.yml
+   ```
 
    This production parameters file contains different variables for the ports our application runs on. It is quite common that port `80` will be unavailable in production clusters.
 
    If we check the status of our application again, we can see what port the `www` service is running in production.
 
-   ```
-   docker app status linkextractor
-   
+   ```powershell
+   > docker app status linkextractor 
    INSTALLATION
    ------------
    Name:         linkextractor
@@ -203,15 +195,14 @@ It's time to deploy the Docker App on to the swarm cluster to start taking advan
 
 For the next exercise we will be deploying our application slightly differently so will need to clean up the application and the swarm.
 
-```
-docker app uninstall linkextractor
+```powershell
+   > docker app uninstall linkextractor
+   Removing service linkextractor_api
+   Removing service linkextractor_www
+   Removing network linkextractor_default
+   Application "linkextractor" uninstalled on context "default"
 
-Removing service linkextractor_api
-Removing service linkextractor_www
-Removing network linkextractor_default
-Application "linkextractor" uninstalled on context "default"
-
-docker swarm leave --force
-Node left the swarm.
+   docker swarm leave --force
+   Node left the swarm.
 ```
-Now move on to step5
+## Proceed to Step 5
