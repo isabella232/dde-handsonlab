@@ -43,7 +43,9 @@ ENTRYPOINT ["python", "./linkextractor.py"]
 ```
 
 **Option 2:** Copy the cheats file
-`cp cheats/Dockerfile .`
+```powershell
+   > cp cheats/Dockerfile .
+   ```
 
 ## Build the image
 Build the docker image with a name:tag of linkextractor:v1
