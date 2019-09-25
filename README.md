@@ -6,7 +6,7 @@ through:
 - Creating your first containerised microservice
 - Creating a multi-service containerised application
 - Leverage Docker Templates and Docker Application Designer to jump start your
-  microservice application development. 
+  microservices application development. 
 - Deploy your microservices based application to Kubernetes.
 - Distribute your microservices based application through Docker App and Docker
   Hub.
