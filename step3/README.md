@@ -59,8 +59,8 @@ Notice that at this point, the `step3` directory is pretty empty. There is no Py
 
    4. Open [localhost](http://localhost) in a web browser and give your new web
    front-end a spin.  You can also still access the API directly. For example,
-   ```(http://localhost:5000/api/http://docker.com)
-   ```
+   `http://localhost:5000/api/http://docker.com
+   `
 
    ![]( ./images/image5.png)
 
