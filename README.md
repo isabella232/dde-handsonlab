@@ -26,7 +26,7 @@ It starts from running a very basic Python script and gradually leads to a
 multi-service container orchestration (aka microservices architecture).
 
 **No coding skills required!**
-This workshop uses a Python example but no Python expertise is assumed or required. Step 6 switches to Ruby, but again, no Ruby knowledge is required.
+This workshop uses Python, Flask, and Apache but no expertise or programming experience with these technologies is assumed or required. 
 
 ## How to Use the Repository
 
