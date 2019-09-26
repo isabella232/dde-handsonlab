@@ -3,31 +3,30 @@
 Welcome to a Docker Desktop Enterprise hands on Lab. This lab will walk you
 through:
 
-- Creating your first Containerised Micro Service
-- Creating a Multi-Service Containerised Application
+- Creating your first containerised microservice
+- Creating a multi-service containerised application
 - Leverage Docker Templates and Docker Application Designer to jump start your
-  Micro Service Application development. 
-- Deploy your Micro Serviced based application on to Kubernetes.
-- Distribute your Micro Serviced based application through Docker App and Docker
+  microservices application development. 
+- Deploy your microservices based application to Kubernetes.
+- Distribute your microservices based application through Docker App and Docker
   Hub.
 
 ## Pre-Requisities
 
 - Docker Desktop Enterprise installed.
-- The Lab's Application Library pre-loaded into your DDE's Application Designer.
+- The lab's application library is pre-loaded into your DDE's Application Designer.
 - The IDE of your choice locked and loaded.
 
 ## Link Extractor App
 
 Link Extractor app scrapes links from a given web page.  This repository
-illustrates step by step approach to learn [Docker](https://www.docker.com/).
+illustrates a step-by-step approach to learn [Docker](https://www.docker.com/).
 
 It starts from running a very basic Python script and gradually leads to a
-multi-service container orchestration (AKA micro-service architecture).
+multi-service container orchestration (aka microservices architecture).
 
-**No Python skills required** This workshop uses a Python example but no Python
-expertise is assumed or required. Step 6 switches to Ruby, but again, no Ruby
-knowledge is required.
+**No coding skills required!**
+This workshop uses a Python example but no Python expertise is assumed or required. Step 6 switches to Ruby, but again, no Ruby knowledge is required.
 
 ## How to Use the Repository
 
@@ -38,8 +37,7 @@ Before you get started, verify the Docker Desktop Enterprise is working on your
 machine. Open a Terminal and run:
 
 ```bash
-PS C:\Users\oppom> docker version
-
+> docker version
 Client: Docker Engine - Enterprise
  Version:           19.03.2
  API version:       1.40
@@ -67,13 +65,14 @@ Server: Docker Engine - Enterprise
  docker-init:
   Version:          0.18.0
   GitCommit:        fec3683
-PS C:\Users\oppom>
 ```
 
 > If there was a problem, please notify an instructor!
 
-Open your IDE, VS Code is installed on all Lab Machines. And start working
-through the lab. Enjoy!
+Open your IDE (Visual Studio Code is installed on all lab machines) and start working.
+through the labs
+
+Enjoy!
 
 ## References
 

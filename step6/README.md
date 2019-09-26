@@ -14,39 +14,41 @@ can be distributed through the simple `push` and `pull` syntax.
 
 ## Try it out
 
-1) First, we need to login to Docker Desktop using your Docker ID.
+1. First, we need to login to Docker Desktop using your Docker ID.  Enter your username and password when prompted
 
-   ```powershell
-   docker login <hub-id>
+   ```bash
+   > docker login
+   Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+   Username:
    ```
 
-2) Docker Applications can be pushed and pulled as OCI container images. This
+2. Docker Applications can be pushed and pulled as OCI container images. This
    means a Docker Application can be distributed through any container registry.
    We are going to leverage the Docker Hub (a SaaS container registry) to
    distribute our Docker Application.
 
    A simple `docker app push` will embed the local file structure into an OCI
-   image and push this to a container registry.
+   image and push this to a container registry.  Navigate into the `step6` directory and run
 
    ```powershell
    > docker app push linkextractor.dockerapp --tag <hub-id>/linkextractor:v1
    ```
-
+   If successful you will receive the following response:
+   ```bash
+   Successfully pushed bundle to docker.io/<hub-id>/linkextractor:v1.
+   ```
    Feel free to browse to the Docker Hub and checkout our pushed Docker App.
 
-   https://hub.docker.com/r/<hub-id>/linkextractor
-   https://hub.docker.com/r/<hub-id>/ee-templates-web
-   https://hub.docker.com/r/<hub-id>/ee-templates-api
+   `https://hub.docker.com/r/<hub-id>/linkextractor`
 
-3) Now you can delete all local copies of the Link Extractor app as it is now
-   stored in the Docker Hub.
+3. You can delete `docker image rm` all local copies of the Link Extractor app as it is now
+   stored in Docker Hub.
 
    ```powershell
-   rm linkextractor.dockerapp
-   docker image rm <hub-id>/linkextractor:v1-invoc
+   > docker image rm <hub-id>/linkextractor:v1-invoc
    ```
 
-4) Now can inspect our remote Docker App. 
+4. Now we can inspect our remote Docker App. 
 
    ```powershell
    > docker app inspect <hub-id>/linkextractor:v1
@@ -73,13 +75,22 @@ can be distributed through the simple `push` and `pull` syntax.
    parameters/production.yml 63B
    ```
 
-5) Finally, we can pull down our remote Docker App and run it locally without
-   the files extracted on to our system. We do need to enable a Container
-   Orchestrator though to run out application.
+5. Finally, we can pull down our remote Docker App and run it locally without
+   the files extracted on to our system. To do this we need to enable a Container
+   Orchestrator to run our application.
 
-   ```
+   ```powershell
    > docker swarm init
+   ```
+   You may receive the following response if you have already initiated a swarm.
    
+   ```text
+   Error response from daemon: This node is already part of a swarm. Use "docker swarm leave" to leave this swarm and join another one.
+   ```
+   
+   You can ignore this message and continue.
+
+   ```powershell
    > docker app install <hub-id>/linkextractor:v1
    WARNING: installing over previously failed installation "linkextractor"
    Creating network linkextractor_default
@@ -90,4 +101,6 @@ can be distributed through the simple `push` and `pull` syntax.
 
    For a final time, open a web browser and navigate to http://localhost
 
-6) Congratulations you have finished the lab!!!
+6. Congratulations you have finished the lab!!!
+
+
