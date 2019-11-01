@@ -28,7 +28,7 @@ services:
     icon: https://d2.alternativeto.net/dist/icons/flask_27004.png?width=128&height=128&mode=crop&upscale=false
     description: Python App to build on
     source:
-      image: ollypom/ee-templates-api:v1
+      image: dockersamples/ddehandson-flask:latest
     parameters:
     - name: pythonver
       defaultValue: "3.7"
@@ -56,7 +56,7 @@ services:
     icon: https://www.prchecker.info/free-icons/128x128/apache_128_px.png
     description: Simple apache web server
     source:
-      image: ollypom/ee-templates-web:v1
+      image: dockersamples/ddehandson-apache:latest
     parameters:
     - name: phpver
       defaultValue: "7"
