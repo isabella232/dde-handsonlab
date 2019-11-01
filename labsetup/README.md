@@ -23,7 +23,7 @@ all of the guides. Therefore we advise users to `clone` this repository locally
 and then work through it.
 
 ```bash
-git clone https://github.com/ollypom/dde-handsonlab
+git clone https://github.com/dockersamples/dde-handsonlab
 ```
 
 ## Application Designer Library
@@ -45,7 +45,7 @@ The library configuration file is located at:
    kind: Preferences
    repositories:
    - name: custom-services
-     url: https://raw.githubusercontent.com/ollypom/dde-handsonlab/master/labsetup/appdesignertemplates/library.yaml
+     url: https://raw.githubusercontent.com/dockersamples/dde-handsonlab/master/labsetup/appdesignertemplates/library.yaml
    - name: library
      url: https://docker-application-template.s3.amazonaws.com/production/v0.1.5/library.yaml
    ```
